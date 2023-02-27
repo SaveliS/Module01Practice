@@ -15,9 +15,17 @@ namespace ApplicationOne
     
     public partial class SessionEntities : DbContext
     {
+        private static SessionEntities instance;
         public SessionEntities()
             : base("name=SessionEntities")
         {
+        }
+
+        public static SessionEntities GetContext()
+        {
+            if(instance == null)
+                instance = new SessionEntities();
+            return instance;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -8,14 +8,50 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/> <!--WindowName-->
+            <RowDefinition Height="25"/> <!--WindowName-->
             <RowDefinition Height="200"/> <!--Logo-->
             <RowDefinition/> <!--Content-->
         </Grid.RowDefinitions>
 
         <!--#region Window name -->
         <Grid Grid.Row="0">
-            <TextBlock Text="Login" FontSize="15" FontWeight="SemiBold"/>
+            <TextBlock Text="Login" Margin="10 0 0 0" FontSize="15" FontWeight="SemiBold"/>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region Logo -->
+        <Grid Grid.Row="1">
+            <Border VerticalAlignment="Center" HorizontalAlignment="Center">
+                <!--Тут нужно картинку подключить-->
+                <Image Source="/Resource/Image/logo.png"/>
+            </Border>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region MainContent -->
+        <Grid Grid.Row="2">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <!--Login text and pass box--> 
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 30">
+                    <TextBlock Text="Username: " VerticalAlignment="Center" FontSize="20"/>
+                    <TextBox Height="30" Width="300" FontSize="20" x:Name="loginBox"/>
+                </StackPanel>
+                
+                <!--Password text and pass box-->
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 30">
+                    <TextBlock Text="Password:  " VerticalAlignment="Center" FontSize="20"/>
+                    <PasswordBox Height="30" Width="300" FontSize="20" x:Name="passwordBox"/>
+                    <TextBox Height="30" Width="300" FontSize="20" Visibility="Collapsed"/>
+                </StackPanel>
+                
+                <!--Buttons-->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="Login" x:Name="loginButton" Height="30" Width="150" 
+                            Margin="0 0 50 0" Click="loginButton_Click"/>
+                    <Button Content="Exit" Height="30" x:Name="exitButton" Width="150"
+                            Click="exitButton_Click"/>
+                </StackPanel>
+            </StackPanel>
         </Grid>
         <!--#endregion-->
     </Grid>

@@ -64,6 +64,40 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddNewUser.xaml.cs">
+      <DependentUpon>AddNewUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Countries.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenuAdministrator.xaml.cs">
+      <DependentUpon>MainMenuAdministrator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Offices.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Roles.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Page Include="AddNewUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenuAdministrator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -117,6 +151,21 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resource\TextStyle\TCBI____.TTF" />
+    <Resource Include="Resource\TextStyle\TCB_____.TTF" />
+    <Resource Include="Resource\TextStyle\TCCB____.TTF" />
+    <Resource Include="Resource\TextStyle\TCCEB.TTF" />
+    <Resource Include="Resource\TextStyle\TCCM____.TTF" />
+    <Resource Include="Resource\TextStyle\TCMI____.TTF" />
+    <Resource Include="Resource\TextStyle\TCM_____.TTF" />
+    <Resource Include="Resource\TextStyle\TeXGyreAdventor-Bold.ttf" />
+    <Resource Include="Resource\TextStyle\TeXGyreAdventor-BoldItalic.ttf" />
+    <Resource Include="Resource\TextStyle\TeXGyreAdventor-Italic.ttf" />
+    <Resource Include="Resource\TextStyle\TeXGyreAdventor-Regular.ttf" />
+    <Resource Include="Resource\TextStyle\verdana.ttf" />
+    <Resource Include="Resource\TextStyle\verdanab.ttf" />
+    <Resource Include="Resource\TextStyle\verdanai.ttf" />
+    <Resource Include="Resource\TextStyle\verdanaz.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -125,10 +174,41 @@
     <Content Include="ModelDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelDB.Context.cs</LastGenOutput>
+      <DependentUpon>ModelDB.edmx</DependentUpon>
     </Content>
+    <Content Include="ModelDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDB.edmx</DependentUpon>
+      <LastGenOutput>ModelDB.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Resource\Image\DS2017_TP09_2_colors%404x.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_2_colors.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_2_colors_%402x.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_2_colors_swatches%404x1.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_2_colors_with_bg%402x.png" />
+    <Resource Include="Resource\Image\logo.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_2_colors_with_bg.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_Airplane-Amonic-Single.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_Airplane-Amonic.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_black%402x.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_black%404x.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_black.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_color%402x.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_color%404x.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_color.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_color_swatches%404x1.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_color_swatches.jpg" />
+    <Resource Include="Resource\Image\DS2017_TP09_mono%402x.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_mono%404x.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_mono.png" />
+    <Resource Include="Resource\Image\DS2017_TP09_mono_swatches%404x1.png" />
+    <Resource Include="Resource\Image\white%402x.png" />
+    <Resource Include="Resource\Image\white%404x.png" />
+    <Resource Include="Resource\Image\white.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

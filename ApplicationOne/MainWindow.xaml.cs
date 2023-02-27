@@ -20,9 +20,39 @@ namespace ApplicationOne
     /// </summary>
     public partial class MainWindow : Window
     {
+        int couter = 0;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void loginButton_Click(object sender, RoutedEventArgs e)
+        {
+            var user = SessionEntities.GetContext().Users.Where(p => p.Email == loginBox.Text && p.Password == passwordBox.Password).FirstOrDefault();
+            var enableUser = SessionEntities.GetContext().Users.Where(p => p.Active == true);
+            if (user != null && enableUser != null)
+            {
+                MainMenuAdministrator mainMenuAdministrator = new MainMenuAdministrator();
+                mainMenuAdministrator.Show();
+                this.Close();
+            }
+            else
+            {
+                couter++;
+                MessageBox.Show("Неправильный логин или пароль!" + couter);
+            }
+
+            if (couter == 3)
+            {
+                loginBox.IsEnabled = false;
+                passwordBox.IsEnabled = false;
+                loginButton.IsEnabled = false;
+            }
+        }
+
+        private void exitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
