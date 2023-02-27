@@ -25,3 +25,5 @@ C:\Users\tupon\Desktop\Учеба\ПрактикаПМ01\27022023\ApplicationOne
 C:\Users\tupon\Desktop\Учеба\ПрактикаПМ01\27022023\ApplicationOne\ApplicationOne\obj\Debug\ApplicationOne.pdb
 C:\Users\tupon\Desktop\Учеба\ПрактикаПМ01\27022023\ApplicationOne\ApplicationOne\obj\Debug\AddNewUser.g.cs
 C:\Users\tupon\Desktop\Учеба\ПрактикаПМ01\27022023\ApplicationOne\ApplicationOne\obj\Debug\AddNewUser.baml
+C:\Users\tupon\Desktop\Учеба\ПрактикаПМ01\27022023\ApplicationOne\ApplicationOne\obj\Debug\EditProfileUser.g.cs
+C:\Users\tupon\Desktop\Учеба\ПрактикаПМ01\27022023\ApplicationOne\ApplicationOne\obj\Debug\EditProfileUser.baml

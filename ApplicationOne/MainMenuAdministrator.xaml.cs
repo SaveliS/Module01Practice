@@ -71,5 +71,25 @@ namespace ApplicationOne
                 row.Background = new SolidColorBrush(Colors.Red);
             }
         }
+
+        private void ChangeRoleButton_Click(object sender, RoutedEventArgs e)
+        {
+            Users users = MainDataGrid.SelectedItem as Users;
+            if (users == null)
+                MessageBox.Show("Выберите пользователя для редактирования", Title = "Ошибка");
+            EditProfileUser editProfileUser = new EditProfileUser(users);
+            if(editProfileUser.ShowDialog() == true)
+                ProgressDataInDB();
+        }
+
+        private void EnableDisableLogin_Click(object sender, RoutedEventArgs e)
+        {
+            Users users = MainDataGrid.SelectedItem as Users;
+            if(users == null)
+                MessageBox.Show("Выберите пользователя для редактирования", Title = "Ошибка");
+            SessionEntities.GetContext().Users.Where(p => p.ID == users.ID).FirstOrDefault().Active = false;
+            SessionEntities.GetContext().SaveChanges();
+            ProgressDataInDB();
+        }
     }
 }

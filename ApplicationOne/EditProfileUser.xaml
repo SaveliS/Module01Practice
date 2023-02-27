@@ -1,0 +1,48 @@
+﻿<Window x:Class="ApplicationOne.EditProfileUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApplicationOne"
+        mc:Ignorable="d"
+        Title="Edit Role" Height="250" Width="350">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" Height="250">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Email address: " Margin="25, 0 , 0, 0" Width="85"></Label>
+                <TextBox x:Name="EditEmailAddress" Width="200" Margin="5" Text="{Binding Email}"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="First name: " Margin="25, 0 , 0, 0" Width="85"></Label>
+                <TextBox x:Name="EditFirstName" Width="200" Margin="5" Text="{Binding FirstName}"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Last name: " Margin="25, 0 , 0, 0" Width="85"></Label>
+                <TextBox x:Name="EditLastName" Width="200" Margin="5" Text="{Binding LastName}"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Office: " Margin="25, 0 , 0, 0" Width="85"></Label>
+                <ComboBox x:Name="EditOffice" Width="200" Margin="5">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding Offices.Title}"></Label>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Role" Margin="25 , 0 , 0, 0" Width="85"></Label>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <RadioButton Content="User" x:Name="UserRole"/>
+                    <RadioButton Content="Administrator" x:Name="AdminRole"></RadioButton>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Width="75" Height="30" Content="Apply" x:Name="ApplyChangeUser" Margin="50,25,25,25" Click="ApplyChangeUser_Click"></Button>
+                <Button Width="75" Height="30" Content="Cancel" x:Name="CancelChangeUser" Margin="50,25,25,25" Click="CancelChangeUser_Click"></Button>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>

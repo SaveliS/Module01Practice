@@ -70,6 +70,9 @@
     <Compile Include="Countries.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="EditProfileUser.xaml.cs">
+      <DependentUpon>EditProfileUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainMenuAdministrator.xaml.cs">
       <DependentUpon>MainMenuAdministrator.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <Page Include="AddNewUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditProfileUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
