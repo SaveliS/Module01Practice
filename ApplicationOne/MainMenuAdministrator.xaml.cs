@@ -54,5 +54,22 @@ namespace ApplicationOne
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void GoWindowAddUser_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewUser addNewUser = new AddNewUser();
+            if (addNewUser.ShowDialog() == true) return;
+        }
+
+        private void MainDataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            var row = e.Row;
+            var oneUser = row.DataContext as Users;
+            if (oneUser == null) return;
+            if(oneUser.Active != true)
+            {
+                row.Background = new SolidColorBrush(Colors.Red);
+            }
+        }
     }
 }

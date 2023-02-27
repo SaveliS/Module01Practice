@@ -8,7 +8,7 @@
         Title="AMONIC Airlines Automation System" Height="450" Width="800">
     <StackPanel Orientation="Vertical">
         <StackPanel Orientation="Horizontal" Height="55" VerticalAlignment="Top" >
-            <Button Width="75" Height="30" Margin="10" Content="Add user" Background="White" BorderBrush="White"></Button>
+            <Button Width="75" Height="30" Margin="10" Content="Add user" Background="White" BorderBrush="White" x:Name="GoWindowAddUser" Click="GoWindowAddUser_Click"></Button>
             <Button Width="75" Height="30" Margin="10" Content="Exit" Background="White" BorderBrush="White"></Button>
         </StackPanel>
         <StackPanel Height="330" Orientation="Vertical">
@@ -25,7 +25,7 @@
                 </ComboBox>
             </StackPanel>
             <StackPanel Height="290">
-                <DataGrid AutoGenerateColumns="False" x:Name="MainDataGrid" ItemsSource="{Binding usersList}">
+                <DataGrid AutoGenerateColumns="False" x:Name="MainDataGrid" ItemsSource="{Binding usersList}" LoadingRow="MainDataGrid_LoadingRow">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Name" Binding="{Binding FirstName}"></DataGridTextColumn>
                         <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"></DataGridTextColumn>

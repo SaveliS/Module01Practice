@@ -5,8 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ApplicationOne"
         mc:Ignorable="d"
-        Title="AddNewUser" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="AddNewUser" Height="500" Width="400">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <!--Name-->
+        <StackPanel>
+            <TextBlock Text="Name" FontSize="20"/>
+            <TextBox x:Name="nameBox" Width="150" Height="30" FontSize="20"
+                     Text="{Binding LastName}"/>
+        </StackPanel>
+
+        <!--LastName-->
+        <StackPanel>
+            <TextBlock Text="Last Name" FontSize="20"/>
+            <TextBox x:Name="lastNameBox" Width="150" Height="30" FontSize="20"
+                     Text="{Binding FirstName}"/>
+        </StackPanel>
+
+        <!--Age-->
+        <StackPanel>
+            <TextBlock Text="Age" FontSize="20"/>
+            <DatePicker  Height="30" x:Name="selectDate"/>
+        </StackPanel>
+
+        <!--User Role-->
+        <StackPanel>
+            <TextBlock Text="User Role" FontSize="20"/>
+            <ComboBox x:Name="comboboxRole" DisplayMemberPath="Title" SelectedItem="{Binding Roles}"/>
+        </StackPanel>
+
+        <!--Email address-->
+        <StackPanel>
+            <TextBlock Text="Email address" FontSize="20"/>
+            <TextBox x:Name="emailBox" Width="150" Height="30" FontSize="20"
+                     Text="{Binding Email}"/>
+        </StackPanel>
+
+        <!--Office-->
+        <StackPanel>
+            <TextBlock Text="Office" FontSize="20"/>
+            <ComboBox x:Name="comboboxOffice" DisplayMemberPath="Title"
+                      SelectedItem="{Binding Offices}"/>
+        </StackPanel>
+
+        <!--Password-->
+        <StackPanel Margin="0 0 0 20">
+            <TextBlock Text="Password" FontSize="20"/>
+            <TextBox x:Name="passwordBox" Width="150" Height="30" FontSize="20"
+                     Text="{Binding Password}"/>
+        </StackPanel>
+
+        <Button Height="30" Content="Add" x:Name="addButton" Click="addButton_Click"/>
+    </StackPanel>
 </Window>
